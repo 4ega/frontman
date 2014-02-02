@@ -1,0 +1,34 @@
+{{!< default}}
+
+<div class="l-wrapper-fm theme-margin">
+
+  <main class="l-main-fm" role="main">
+    {{#foreach posts}}
+      <article class="article-fm theme-margin" role="article">
+        <header class="postheader-fm">
+          <time class="date-fm" datetime="{{date format="YYYY-MM-DD"}}">{{date format="dddd DD MMM YYYY"}}</time>
+          <h1 class="posttitle-cp">
+            <a href="{{{url}}}" rel="bookmark">{{title}}</a>
+          </h1>
+        </header>
+
+        <div class="postcontent-fm">
+          {{excerpt}}
+        </div>
+
+        {{#if tags}}
+          <div class="posttags-fm">
+            Тэги: {{tags separator=" | "}}
+          </div>
+        {{/if}}
+      </article>
+    {{/foreach}}
+
+    {{#if pagination}}
+      <div class="pagination-fm">
+        {{{pagination}}}
+      </div>
+    {{/if}}
+  </main>
+
+</div>

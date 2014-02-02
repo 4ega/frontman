@@ -1,0 +1,41 @@
+{{!< default}}
+
+<div class="l-wrapper-fm theme-margin">
+
+  <main class="l-main-fm" role="main">
+
+    {{#post}}
+      <article class="article-fm theme-margin" role="article">
+        <header class="postheader-fm">
+          <time class="date-fm" datetime="{{date format="YYYY-MM-DD"}}">{{date format="dddd DD MMM YYYY"}}</time>
+          <h1 class="posttitle-cp">{{title}}</h1>
+        </header>
+
+        <div class="postcontent-fm">
+          {{content}}
+        </div>
+
+        {{#if tags}}
+          <div class="posttags-fm">
+            Тэги: {{tags separator=" | "}}
+          </div>
+        {{/if}}
+
+        <div class="sharepost-fm">
+          <h4>Поделиться:</h4>
+          <ul></ul>
+        </div>
+      </article>
+    {{/post}}
+
+    {{#foreach posts}}
+    {{/foreach}}
+
+    {{#if pagination}}
+      <div class="pagination-fm">
+        {{{pagination}}}
+      </div>
+    {{/if}}
+  </main>
+
+</div>
